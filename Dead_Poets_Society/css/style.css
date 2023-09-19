@@ -1,0 +1,125 @@
+*{margin: 0px; padding: 0px;}
+
+.logo{grid-area: logo;}
+.nome{grid-area: nome;}
+.navs{grid-area: navs;}
+.lado{grid-area: lado;}
+.main{grid-area: main;}
+.foot{grid-area: foot;}
+
+body{
+    font-size: larger;
+    margin: 50px;
+    padding: 5px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba(135, 90, 31, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    font-family: 'Comic Sans MS';
+}
+
+figcaption{
+    font-size: 10pt;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 8% auto;
+    grid-template-areas: 
+    'logo nome nome nome nome nome'
+    'navs navs navs navs navs navs';
+    background-color: #c4532d;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+
+.navs ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background-color: #993d1f;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navs a{
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+}
+
+.lado ul{
+    list-style: none;
+    padding-right: 10px;
+}
+
+.lado a{
+    color: rgb(15, 99, 168);
+    text-decoration: none;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 2% auto;
+    grid-template-areas: 
+    'lado lado main main main main main main';
+}
+
+main p{
+    text-align: justify;
+}
+
+.main a{
+    text-decoration: none;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+.nome{
+    text-align: center;
+}
+
+.nome h1{
+    padding: 2%;
+}
+
+.books{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 650px){
+    body{
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+    }   
+
+    .logo{visibility: collapse;}
+
+    header{
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main{
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    footer{
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+    }  
+}
