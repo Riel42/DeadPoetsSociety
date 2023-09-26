@@ -24,7 +24,7 @@
         <nav class="navs">
             <ul>
                 <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="#">Livros</a></li>
+                <li><a href="livros.php">Livros</a></li>
                 <li><a href='cadastrar.php'>Cadastrar-se</a></li>
             </ul>
         </nav>

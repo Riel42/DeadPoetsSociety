@@ -10,6 +10,8 @@ $result = $conn->query($sql);
 if ($result->num_rows == 1) { //Se encontrar um resultado
     session_start();
     $_SESSION["usuario"] = true;
+    $_SESSION["email"] = $email;
+    
     header("Location: index.html"); //redirecione para index.php
     exit();
 } else {

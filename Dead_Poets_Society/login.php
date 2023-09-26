@@ -24,13 +24,13 @@
         <nav class="navs">
             <ul>
                 <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="#">Livros</a></li>
+                <li><a href="livros.php">Livros</a></li>
                 <li><a href='cadastrar.php'>Cadastrar-se</a></li>
             </ul>
         </nav>
     </header>
     <main style="display: block; text-align: center; padding: 50px">
-        <h1>Site de Login</h1>
+        <h1>Faça seu Login aqui!</h1>
         <form action="processar-login.php" method="POST">
 
             <label for="email">E-mail: </label>
