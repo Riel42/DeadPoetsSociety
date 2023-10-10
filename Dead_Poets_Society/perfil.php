@@ -51,6 +51,7 @@ $email = $_SESSION['email'];
                 echo "Nome: " . $row["nome"] . "<br>";
                 echo "E-mail: " . $row["email"] . "<br>";
                 echo "Data de Nascimento: " . $row["dataNasc"] . "<br>";
+                echo "Foto:<br><img src='" . $row["foto"] . "' width='200px' height='200px'><br>";
             } else {
                 header("Location: login.php");
             }

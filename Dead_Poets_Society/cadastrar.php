@@ -45,6 +45,9 @@
             <label for="confirmarSenha">Confirme a sua senha: </label><br>
             <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" required><br>
 
+            <label for="foto">Foto: </label>
+            <input type="file" id="foto" name="foto" placeholder="Insira a URL da sua foto" required><br>
+
             <?php if (isset($_GET['erro'])){?>
                 <label for="invalido" class="erro" style="color: red">As senhas estão incorretas</label><br>
             <?php }?>

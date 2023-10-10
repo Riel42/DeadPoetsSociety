@@ -32,3 +32,6 @@ create table likes(
 
 INSERT INTO usuarios VALUES 
 (1, 'root', 'test@email.com', '12345', '2006-05-22');
+
+ALTER TABLE usuarios
+ADD foto varchar(255);
