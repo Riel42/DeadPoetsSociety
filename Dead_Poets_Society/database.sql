@@ -20,6 +20,19 @@ create table livros(
     primary key(isbn)
 );
 
+ALTER TABLE livros
+ADD address varchar(255);
+
+select * from livros;
+
+INSERT INTO livros (nome, descricao, paginas, editora, address) VALUES 
+("1984", "Romance distópico", 316, "Companhia das Letras", ""),
+("A Metamorfose", "Romance - Ficção", 100, "Antofágica", ""),
+("O Hobbit", "Livro de fantasia medieval infantojuvenil", 350, "HarperCollins Brasil", ""),
+("O Pequeno Príncipe", "Livro de ficção infantojuvenil", 115, "Companhia das Letras", ""),
+("Velho e o Mar", "Ficção cubana", 164, "Bertrand Brasil", "");
+
+
 create table likes(
 	id int not null auto_increment,
     idUsuarios int not null,
