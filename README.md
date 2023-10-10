@@ -1,6 +1,6 @@
 # DeadPoetsSociety
 
-<img src="/img/Dead Poets Society.png">
+<img src="https://umlivropordia.com.br/wp-content/uploads/2023/02/Clube-de-leitores-jpg.webp">
 
 ## Quem Somos Nós
 
