@@ -51,6 +51,27 @@ $email = $_SESSION['email'];
                 echo "Nome: " . $row["nome"] . "<br>";
                 echo "E-mail: " . $row["email"] . "<br>";
                 echo "Data de Nascimento: " . $row["dataNasc"] . "<br>";
+
+                if(isset($_POST['acao'])){
+                    $arquivo = $_FILES['file'];
+        
+                    $arquivoNovo = explode('.',$arquivo['name']);
+        
+                    if($arquivoNovo[sizeof($arquivoNovo)-1] != 'jpg'){
+                        die('Você não pode fazer upload deste tipo de arquivo');
+                    }
+                    else{
+                        move_uploaded_file($arquivo['tmp_name'],'uploads/'.$arquivo['name']);
+                        $outroArquivo = $arquivo['name'];
+                        $idUser = $row['id'];
+                        $sqlFoto = "UPDATE usuarios SET foto='uploads/$outroArquivo' WHERE id='$idUser'";
+                        if ($conn->query($sqlFoto) === TRUE) {
+                            header("Location: perfil.php?arquivo='$outroArquivo'");
+                            exit();
+                        }
+                    }
+                }
+
                 echo "Foto:<br><img src='" . $row["foto"] . "' width='200px' height='200px'><br>";
             } else {
                 header("Location: login.php");
@@ -62,6 +83,18 @@ $email = $_SESSION['email'];
 
         $conn->close();
     ?>
+
+
+    <?php 
+        $sql = "SELECT * FROM usuarios WHERE id";
+        include 'conexao.php';
+    ?>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" name="acao" value="Enviar">
+    </form>
+    
     </main>
     <hr>
     <footer>

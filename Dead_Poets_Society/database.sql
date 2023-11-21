@@ -48,3 +48,5 @@ INSERT INTO usuarios VALUES
 
 ALTER TABLE usuarios
 ADD foto varchar(255);
+
+select * from usuarios;
