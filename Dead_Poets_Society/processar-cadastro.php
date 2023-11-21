@@ -14,8 +14,8 @@ if(isset($foto)){
 }
 
 if($senha === $confirmarSenha){
-    $sql = "INSERT INTO usuarios (nome, email, senha, dataNasc, foto) VALUES 
-    ('$nome', '$email', '$senha', '$dataNasc', '$foto')";
+    $sql = "INSERT INTO usuarios (nome, email, senha, dataNasc) VALUES 
+    ('$nome', '$email', '$senha', '$dataNasc')";
 }
 else{
     header("Location: cadastrar.php?erro=1");
