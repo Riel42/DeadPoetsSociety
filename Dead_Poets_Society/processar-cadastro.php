@@ -7,11 +7,10 @@ $senha = $_POST["senha"];
 $confirmarSenha = $_POST["confirmarSenha"];
 $dataNasc = $_POST["dataNasc"];
 
-$foto = "img/scooby.jpg";
 
 if($senha === $confirmarSenha){
     $sql = "INSERT INTO usuarios (nome, email, senha, dataNasc, foto) VALUES 
-    ('$nome', '$email', '$senha', '$dataNasc', '$foto')";
+    ('$nome', '$email', '$senha', '$dataNasc', 'img/blank_profile.jpg')";
 }
 else{
     header("Location: cadastrar.php?erro=1");
