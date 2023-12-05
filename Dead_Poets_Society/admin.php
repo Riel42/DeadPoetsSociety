@@ -12,18 +12,8 @@
     <title>Dead Poets Society - Tela de Login</title>
 
     <style>
-        main{text-align: center; display: flex; flex-direction: row; justify-content: center;}
+        section{text-align: center}
         table, td, th{border: 1px solid black; padding: 5px; margin: 5px;}
-        .like{
-            width:50px;
-            height:50px;
-            background-image: url(img/like.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 50px 50px;
-            border: 0;
-        }
-
     </style>
 
 </head>
@@ -56,21 +46,17 @@
           <th>Descrição</th>
           <th>Páginas</th>
           <th>Editora</th>
-          <th>Ação</th>
+          <th colspan="2">Ação</th>
         </tr>
       </thead>
       <?php
-      session_start();
       require "conexao.php";
       $sql = "select * from livros order by isbn ASC";
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-
-
-    echo $_SESSION['id'];
-    ?>
+      ?>
 
       <tbody>
       <tr>
@@ -80,9 +66,15 @@
         <td><?= $row['editora'] ?></td>
        
         <td>
-        <form action="processar-like.php" method="POST"> 
+        <form action="editar-produto.php" method="GET"> 
           <input type="hidden" name="isbn" value="<?= $row['isbn'] ?>">
-          <input type="submit" class="like" value="">
+          <input type="submit" class="botao-editar" value="Editar">
+          </form>
+        </td>
+        <td>
+          <form action="excluir-produto.php" method="POST">
+            <input type="hidden" name="isbn" value="<?= $row['isbn'] ?>">
+            <input type="submit" class="botao-excluir" value="Excluir">
           </form>
         </td>
         
