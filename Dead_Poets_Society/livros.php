@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <title>Dead Poets Society - Tela de Login</title>
+    <title>Dead Poets Society - Livros</title>
 
     <style>
         main{text-align: center; display: flex; flex-direction: row; justify-content: center;}
-        table, td, th{border: 1px solid black; padding: 5px; margin: 5px;}
+        /*table, td, th{border: 1px solid black; padding: 5px; margin: 5px;}*/
         .like{
             width:50px;
             height:50px;
@@ -23,7 +23,7 @@
             background-size: 50px 50px;
             border: 0;
         }
-
+        h3{ color: red; }
     </style>
 
 </head>
@@ -39,7 +39,7 @@
         </div>
         <nav class="navs">
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="index.php">Página Inicial</a></li>
                 <li><a href="#">Livros</a></li>
                 <li><a href="perfil.php">Perfil</a></li>
                 <li><a href='cadastrar.php'>Cadastrar-se</a></li>
@@ -49,6 +49,14 @@
     <main>
 
   <section>
+    <h3>
+      <?php 
+        $sucesso = $_GET['sucess']; 
+        if($sucesso){ 
+          echo "Livro curtido com sucesso!"; 
+        } 
+      ?>
+    </h3>
     <table>
       <thead>
         <tr>
@@ -56,7 +64,7 @@
           <th>Descrição</th>
           <th>Páginas</th>
           <th>Editora</th>
-          <th>Ação</th>
+          <th>Curtir</th>
         </tr>
       </thead>
       <?php
@@ -68,8 +76,6 @@
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
 
-
-    echo $_SESSION['id'];
     ?>
 
       <tbody>
@@ -85,7 +91,6 @@
           <input type="submit" class="like" value="">
           </form>
         </td>
-        
       </tr>
       <?php }
                 }

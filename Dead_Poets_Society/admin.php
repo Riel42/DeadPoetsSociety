@@ -9,11 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <title>Dead Poets Society - Tela de Login</title>
+    <title>Dead Poets Society - Livros</title>
 
     <style>
-        section{text-align: center}
-        table, td, th{border: 1px solid black; padding: 5px; margin: 5px;}
+        main{text-align: center; display: flex; flex-direction: row; justify-content: center;}
+        /*table, td, th{border: 1px solid black; padding: 5px; margin: 5px;}*/
+        table, td, th, tr{padding: 10px;}
+        .like{
+            width:50px;
+            height:50px;
+            background-image: url(img/like.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            border: 0;
+        }
+        h3{ color: red; }
     </style>
 
 </head>
@@ -29,7 +40,7 @@
         </div>
         <nav class="navs">
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="index.php">Página Inicial</a></li>
                 <li><a href="#">Livros</a></li>
                 <li><a href="perfil.php">Perfil</a></li>
                 <li><a href='cadastrar.php'>Cadastrar-se</a></li>
@@ -39,6 +50,14 @@
     <main>
 
   <section>
+    <h3>
+      <?php 
+        $sucesso = $_GET['sucess']; 
+        if($sucesso){ 
+          echo "Livro curtido com sucesso!"; 
+        } 
+      ?>
+    </h3>
     <table>
       <thead>
         <tr>
@@ -50,13 +69,15 @@
         </tr>
       </thead>
       <?php
+      session_start();
       require "conexao.php";
       $sql = "select * from livros order by isbn ASC";
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-      ?>
+
+    ?>
 
       <tbody>
       <tr>
@@ -66,18 +87,17 @@
         <td><?= $row['editora'] ?></td>
        
         <td>
-        <form action="editar-produto.php" method="GET"> 
+        <form action="editar-livro.php" method="GET"> 
           <input type="hidden" name="isbn" value="<?= $row['isbn'] ?>">
           <input type="submit" class="botao-editar" value="Editar">
           </form>
         </td>
         <td>
-          <form action="excluir-produto.php" method="POST">
-            <input type="hidden" name="isbn" value="<?= $row['isbn'] ?>">
+          <form action="excluir-livro.php" method="POST">
+            <input type="hidden" name="isbn" value="<?= $row['isbn'];?>">
             <input type="submit" class="botao-excluir" value="Excluir">
           </form>
         </td>
-        
       </tr>
       <?php }
                 }

@@ -30,7 +30,7 @@ $email = $_SESSION['email'];
         </div>
         <nav class="navs">
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="index.php">Página Inicial</a></li>
                 <li><a href="livros.php">Livros</a></li>
                 <li><a href="perfil.php">Perfil</a></li>
                 <li><a href='cadastrar.php'>Cadastrar-se</a></li>
