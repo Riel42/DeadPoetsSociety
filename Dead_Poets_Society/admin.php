@@ -52,10 +52,10 @@
   <section>
     <h3>
       <?php 
-        $sucesso = $_GET['sucess']; 
-        if($sucesso){ 
+        if(isset($_GET['sucess'])){
           echo "Livro curtido com sucesso!"; 
-        } 
+
+        }
       ?>
     </h3>
     <table>

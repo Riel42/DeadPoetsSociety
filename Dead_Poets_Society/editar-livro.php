@@ -14,10 +14,29 @@
   <link rel="icon" href="img/logo-ifsp-removebg.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <title>Dead Poets Society - Editar Produto</title>
 </head>
 
 <body>
+  <header>
+  <div class="logo">
+            <figure>
+                <img src="img/logo.png" width="100px" height="100px" style="padding: 5px">
+            </figure>
+        </div>
+        <div class="nome">
+            <h1 style="color: white">Dead Poets Society</h1>
+        </div>
+        <nav class="navs">
+            <ul>
+                <li><a href="index.php">Página Inicial</a></li>
+                <li><a href="livros.php">Livros</a></li>
+                <li><a href="perfil.php">Perfil</a></li>
+                <li><a href='cadastrar.php'>Cadastrar-se</a></li>
+            </ul>
+        </nav>  
+  </header>
   <main>
     <section class="container-form">
     <?php
@@ -55,11 +74,17 @@ if ($result->num_rows > 0) {
         <input type="submit" name="editar" class="botao-cadastrar" value="Editar produto" />
       </form>
 
-    </section>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js" integrity="sha512-Rdk63VC+1UYzGSgd3u2iadi0joUrcwX0IWp2rTh6KXFoAmgOjRS99Vynz1lJPT8dLjvo6JZOqpAHJyfCEZ5KoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
+  <br>
+  <hr>
+    <footer>
+        <div class="foot">
+            <address>Esse site foi criado no IFSP - Campus Guarulhos</address>
+            <b>Filosofia de Copyleft - Código-fonte disponível no <a href="https://github.com/Riel42/DeadPoetsSociety">GitHub</a></b>
+        </div>
+    </footer>
 </body>
 
 </html>

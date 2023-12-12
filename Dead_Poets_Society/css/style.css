@@ -96,6 +96,11 @@ footer{
     justify-content: space-around;
 }
 
+form{
+    display: block;
+    text-align: center;
+}
+
 @media only screen and (max-width: 650px){
     body{
         font-size: medium;
